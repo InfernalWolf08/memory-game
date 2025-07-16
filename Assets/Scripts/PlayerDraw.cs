@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,12 +13,14 @@ public class PlayerDraw : MonoBehaviour
     {
         // Initialize
         cursor = GetComponent<CursorController>();
+        Cursor.visible = false;
     }
 
     // Custom functions
     public void changeColor(GameObject button)
     {
         selectedColor = button.GetComponent<Image>().color;
-        cursor.setCursorColor(selectedColor);
+        cursor.cursor.color = selectedColor;
+        // cursor.setCursorColor(selectedColor);
     }
 }
