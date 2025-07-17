@@ -1,0 +1,4 @@
+repository "Memory Paint 2/Memory Paint 2@20066803587377@cloud"
+  path "/"
+    br "/main"
+    co "/main"
