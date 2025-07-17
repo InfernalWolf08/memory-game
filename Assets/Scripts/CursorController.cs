@@ -9,6 +9,7 @@ public class CursorController : MonoBehaviour
 
     [Header("Image")]
     public Image cursor;
+    public PlayerDraw drawer;
 
     /*void Start()
     {
@@ -22,10 +23,13 @@ public class CursorController : MonoBehaviour
     {
         // Make a UI image the cusor
         cursor.transform.position = Input.mousePosition;
+
+        // Set cursor color
+        cursor.color = drawer.selectedColor;
     }
 
     // Actual unity cursor
-    public void setCursorColor(Color32 mainColor)
+    /*public void setCursorColor(Color32 mainColor)
     {
         // Initialize
         print("called");
@@ -46,5 +50,5 @@ public class CursorController : MonoBehaviour
 
         // Apply cursor
         // Cursor.SetCursor(cursorTex, new Vector2(cursorTex.width/2, cursorTex.height/2), CursorMode.Auto);
-    }
+    }*/
 }
