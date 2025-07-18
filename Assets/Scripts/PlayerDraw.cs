@@ -24,7 +24,7 @@ public class PlayerDraw : MonoBehaviour
     [Header("Scene")]
     public TileGenerator playerTiles;
     public GameObject finishButton;
-    public ImageController imageCont;
+    [HideInInspector] public ImageController imageCont;
 
     void Start()
     {
@@ -111,7 +111,7 @@ public class PlayerDraw : MonoBehaviour
         imageCont.ImportImage(canvas);
 
         // Compare drawings
-        scoreCont.compare(canvas.ToArray(), imageCont.selectedImage);
+        StartCoroutine(scoreCont.displayScore(canvas.ToArray(), imageCont.selectedImage));
 
         // Reset
         StartCoroutine(reset(resetWait));
