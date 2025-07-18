@@ -12,7 +12,7 @@ public class TileGenerator : MonoBehaviour
     public GameObject[] tiles;
     private int amount;
 
-    void Start()
+    void Awake()
     {
         // Initialize
         amount = 1;

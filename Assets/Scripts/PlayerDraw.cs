@@ -98,21 +98,19 @@ public class PlayerDraw : MonoBehaviour
             }
         }
 
-        // Prevent the player from drawing more
-        canDraw = false;
-
-        // Pull curtain up
-        curtain.SetBool("Raise", true);
-
-        // Compare drawings
-        
         // Export data
         UnityEngine.Object.FindFirstObjectByType<ImageController>().ImportImage(canvas);
+
+        // Reset
+        StartCoroutine(curtainDrop(0));
+
+        // Compare drawings
     }
 
     // Coroutines
     IEnumerator curtainDrop(float wait)
     {
+        canvas.Clear();
         canDraw = false;
         finishButton.GetComponent<Animator>().SetBool("isShowing", false);
         curtain.SetBool("Raise", true);
