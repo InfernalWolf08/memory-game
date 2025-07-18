@@ -7,6 +7,7 @@ public class ImageController : MonoBehaviour
     [Header("Image Data")]
     public List<ImageArray> images = new List<ImageArray>();
     public TileGenerator imageTiles;
+    [HideInInspector] public Color32[] selectedImage;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class ImageController : MonoBehaviour
     void generateImage()
     {
         // Randomly pick an image
-        Color32[] selectedImage = images[UnityEngine.Random.Range(0, images.Count)].imageColors;
+        selectedImage = images[UnityEngine.Random.Range(0, images.Count)].imageColors;
         
         // Generate the image
         for (int i=0; i<imageTiles.tiles.Length; i++)

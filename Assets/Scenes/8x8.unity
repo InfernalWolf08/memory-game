@@ -1881,6 +1881,7 @@ MonoBehaviour:
     - serializedVersion: 2
       rgba: 4294967295
   imageTiles: {fileID: 117724927}
+  selectedImage: []
 --- !u!1 &432528971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,6 +2029,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2127,10 +2129,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   canvas: []
+  scoreCont: {fileID: 519420035}
   curtain: {fileID: 263620511}
   curtainWaitTime: 3
+  resetWait: 0
   playerTiles: {fileID: 8205135804833961321}
   finishButton: {fileID: 1511227305}
+  imageCont: {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2147,6 +2152,21 @@ MonoBehaviour:
   defaultCursorTex: {fileID: 2800000, guid: 2480f5bb0e9ed2b4c93bf10b39a16e07, type: 3}
   cursor: {fileID: 4421263}
   drawer: {fileID: 519420033}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4272fe24f6351c840ac84805e2f2d19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  highScore: 0
+  difficulty: 
 --- !u!1 &532807291
 GameObject:
   m_ObjectHideFlags: 0

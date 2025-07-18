@@ -14,14 +14,17 @@ public class PlayerDraw : MonoBehaviour
     public Color32 selectedColor = Color.white;
     public List<Color32> canvas = new List<Color32>();
     private bool canDraw;
+    public ScoreController scoreCont;
 
     [Header("Curtain")]
     public Animator curtain;
     public float curtainWaitTime;
+    public float resetWait;
 
     [Header("Scene")]
     public TileGenerator playerTiles;
     public GameObject finishButton;
+    public ImageController imageCont;
 
     void Start()
     {
@@ -29,6 +32,7 @@ public class PlayerDraw : MonoBehaviour
         cam = GetComponent<Camera>();
         cursor = GetComponent<CursorController>();
         Cursor.visible = false;
+        imageCont = UnityEngine.Object.FindFirstObjectByType<ImageController>();
         StartCoroutine(curtainDrop(curtainWaitTime));
     }
 
@@ -98,13 +102,19 @@ public class PlayerDraw : MonoBehaviour
             }
         }
 
-        // Export data
-        UnityEngine.Object.FindFirstObjectByType<ImageController>().ImportImage(canvas);
+        // Raise curtain
+        canDraw = false;
+        finishButton.GetComponent<Animator>().SetBool("isShowing", false);
+        curtain.SetBool("Raise", true);
 
-        // Reset
-        StartCoroutine(curtainDrop(0));
+        // Export data
+        imageCont.ImportImage(canvas);
 
         // Compare drawings
+        scoreCont.compare(canvas.ToArray(), imageCont.selectedImage);
+
+        // Reset
+        StartCoroutine(reset(resetWait));
     }
 
     // Coroutines
@@ -118,6 +128,13 @@ public class PlayerDraw : MonoBehaviour
         curtain.SetBool("Raise", false);
         finishButton.GetComponent<Animator>().SetBool("isShowing", true);
         canDraw = true;
+        yield return null;
+    }
+
+    IEnumerator reset(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        canvas.Clear();
         yield return null;
     }
 }
