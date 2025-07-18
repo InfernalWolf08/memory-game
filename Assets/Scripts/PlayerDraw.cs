@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,18 @@ public class PlayerDraw : MonoBehaviour
     private Camera cam;
     private CursorController cursor;
 
-    [Header("Color Data")]
+    [Header("Painting Data")]
     public Color32 selectedColor = Color.white;
     public List<Color32> canvas = new List<Color32>();
+    private bool canDraw;
+
+    [Header("Curtain")]
+    public Animator curtain;
+    public float curtainWaitTime;
+
+    [Header("Scene")]
+    public TileGenerator playerTiles;
+    public GameObject finishButton;
 
     void Start()
     {
@@ -19,6 +29,7 @@ public class PlayerDraw : MonoBehaviour
         cam = GetComponent<Camera>();
         cursor = GetComponent<CursorController>();
         Cursor.visible = false;
+        StartCoroutine(curtainDrop(curtainWaitTime));
     }
 
     void Update()
@@ -48,7 +59,7 @@ public class PlayerDraw : MonoBehaviour
         }
 
         // Paint
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && canDraw)
         {
             RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
             
@@ -70,5 +81,45 @@ public class PlayerDraw : MonoBehaviour
     {
         selectedColor = button.GetComponent<Image>().color;
         // cursor.setCursorColor(selectedColor);
+    }
+
+    public void getDrawing()
+    {
+        // Get the color of each tile
+        finishButton.GetComponent<Animator>().SetBool("isShowing", false);
+        GameObject[] painting = playerTiles.tiles;
+
+        // Get the color of each tile
+        foreach (GameObject tile in painting)
+        {
+            if (tile.GetComponent<SpriteRenderer>()!=null)
+            {
+                canvas.Add(tile.GetComponent<SpriteRenderer>().color);
+            }
+        }
+
+        // Prevent the player from drawing more
+        canDraw = false;
+
+        // Pull curtain up
+        curtain.SetBool("Raise", true);
+
+        // Compare drawings
+        
+        // Export data
+        UnityEngine.Object.FindFirstObjectByType<ImageController>().ImportImage(canvas);
+    }
+
+    // Coroutines
+    IEnumerator curtainDrop(float wait)
+    {
+        canDraw = false;
+        finishButton.GetComponent<Animator>().SetBool("isShowing", false);
+        curtain.SetBool("Raise", true);
+        yield return new WaitForSeconds(wait);
+        curtain.SetBool("Raise", false);
+        finishButton.GetComponent<Animator>().SetBool("isShowing", true);
+        canDraw = true;
+        yield return null;
     }
 }
