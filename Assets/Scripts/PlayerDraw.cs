@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerDraw : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class PlayerDraw : MonoBehaviour
     public Color32 selectedColor = Color.white;
     public List<Color32> canvas = new List<Color32>();
     private bool canDraw;
-    public ScoreController scoreCont;
 
     [Header("Curtain")]
     public Animator curtain;
@@ -25,12 +25,19 @@ public class PlayerDraw : MonoBehaviour
     public GameObject finishButton;
     [HideInInspector] public ImageController imageCont;
 
+    [Header("Score")]
+    public GameObject endScreen;
+    public ScoreController scoreCont;
+    public TextMeshProUGUI score;
+    public TextMeshProUGUI highScore;
+
     void Start()
     {
         // Initialize
         cam = GetComponent<Camera>();
         cursor = GetComponent<CursorController>();
         Cursor.visible = false;
+        endScreen.SetActive(false);
         imageCont = UnityEngine.Object.FindFirstObjectByType<ImageController>();
         StartCoroutine(curtainDrop(curtainWaitTime));
     }
@@ -38,26 +45,26 @@ public class PlayerDraw : MonoBehaviour
     void Update()
     {
         // Hotkeys
-        if (Input.GetKeyDown("1"))
+        if (Input.GetKeyDown("1") && canDraw)
         {
             selectedColor = new Color32(255, 0, 0, 255); // Red
-        } else if (Input.GetKeyDown("2")) {
+        } else if (Input.GetKeyDown("2") && canDraw) {
             selectedColor = new Color32(255, Convert.ToByte(127.5), 0, 255); // Orange
-        } else if (Input.GetKeyDown("3")) {
+        } else if (Input.GetKeyDown("3") && canDraw) {
             selectedColor = new Color32(255, 255, 0, 255); // Yellow
-        } else if (Input.GetKeyDown("4")) {
+        } else if (Input.GetKeyDown("4") && canDraw) {
             selectedColor = new Color32(0, 255, 0, 255); // Green
-        } else if (Input.GetKeyDown("5")) {
+        } else if (Input.GetKeyDown("5") && canDraw) {
             selectedColor = new Color32(0, 0, 255, 255); // Blue
-        } else if (Input.GetKeyDown("6")) {
+        } else if (Input.GetKeyDown("6") && canDraw) {
             selectedColor = new Color32(Convert.ToByte(127.5), 0, 255, 255); // Purple
-        } else if (Input.GetKeyDown("7")) {
+        } else if (Input.GetKeyDown("7") && canDraw) {
             selectedColor = new Color32(255, 0, 255, 255); // Pink
-        } else if (Input.GetKeyDown("8")) {
+        } else if (Input.GetKeyDown("8") && canDraw) {
             selectedColor = new Color32(Convert.ToByte(127.5), Convert.ToByte(63.75), 0, 255); // Brown
-        } else if (Input.GetKeyDown("9")) {
+        } else if (Input.GetKeyDown("9") && canDraw) {
             selectedColor = new Color32(0, 0, 0, 255); // Black
-        } else if (Input.GetKeyDown("0")) {
+        } else if (Input.GetKeyDown("0") && canDraw) {
             selectedColor = new Color32(255, 255, 255, 255); // White
         }
 
@@ -131,7 +138,7 @@ public class PlayerDraw : MonoBehaviour
     {
         // Drop curtain
         curtain.SetBool("Raise", false);
-        finishButton.GetComponent<Animator>().SetBool("isShowing", true);
+        finishButton.GetComponent<Animator>().SetBool("isShowing", false);
         canDraw = false;
 
         // Clear player board
@@ -143,7 +150,19 @@ public class PlayerDraw : MonoBehaviour
         
         // Generate new image
         yield return new WaitForSeconds(1.25f);
-        imageCont.generateImage();
+        if (!imageCont.generateImage()) // All images have been shown
+        {
+            // Show endScreen and final scores
+            scoreCont.setHighscore();
+            endScreen.SetActive(true);
+            score.text = $"Score: {scoreCont.score}";
+            highScore.text = $"Highscore: {scoreCont.highScore}";
+
+            // Stop the game
+            canDraw = false;
+            selectedColor = Color.white;
+            yield break;
+        }
 
         // Reset
         StartCoroutine(curtainDrop(curtainWaitTime));

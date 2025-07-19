@@ -16,11 +16,19 @@ public class ImageController : MonoBehaviour
     }
 
     // Custom functions
-    public void generateImage()
+    public bool generateImage()
     {
+        // Check if any images are left
+        if (images.Count<=0)
+        {
+            return false;
+        }
+
         // Randomly pick an image
-        selectedImage = images[UnityEngine.Random.Range(0, images.Count)].imageColors;
-        
+        int index = UnityEngine.Random.Range(0, images.Count);
+        selectedImage = images[index].imageColors;
+        images.Remove(images[index]);
+
         // Generate the image
         for (int i=0; i<imageTiles.tiles.Length; i++)
         {
@@ -31,6 +39,8 @@ public class ImageController : MonoBehaviour
                 tile.GetComponent<SpriteRenderer>().color = selectedImage[i];
             }
         }
+
+        return true;
     }
 
     public void ImportImage(List<Color32> colors)

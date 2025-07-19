@@ -8,8 +8,8 @@ public class ScoreController : MonoBehaviour
     [Header("Score")]
     public int score;
     private int points;
-    public int highScore;
-    public string difficulty;
+    [HideInInspector] public int highScore;
+    public string difficulty; // Used for settings different highscores per difficulty: PlayerPrefs.GetInt(difficulty + " highscore", 0)
     public TextMeshProUGUI currentScore;
     public TextMeshProUGUI addedScore;
     private PlayerDraw drawer;
@@ -20,6 +20,10 @@ public class ScoreController : MonoBehaviour
         currentScore.text = "Score: 0";
         addedScore.text = "";
         drawer = GetComponent<PlayerDraw>();
+        if (!PlayerPrefs.HasKey(difficulty + " highscore"))
+        {
+            PlayerPrefs.SetInt(difficulty + " highscore", 0);
+        }
     }
 
     void Update()
@@ -30,7 +34,16 @@ public class ScoreController : MonoBehaviour
     }
 
     // Custom Functions
-    
+    public void setHighscore()
+    {
+        highScore = PlayerPrefs.GetInt(difficulty + " highscore");
+
+        if (highScore < score)
+        {
+            PlayerPrefs.SetInt(difficulty + " highscore", score);
+            highScore = score;
+        }
+    }
 
     // Coroutines
     public IEnumerator displayScore(Color32[] player, Color32[] image, GameObject[] playerBoard, GameObject[] gameBoard)
