@@ -7,6 +7,9 @@ using TMPro;
 
 public class PlayerDraw : MonoBehaviour
 {
+    [Header("DEBUG")]
+    public bool imageEdit;
+
     [Header("Mouse Data")]
     private Camera cam;
     private CursorController cursor;
@@ -113,11 +116,15 @@ public class PlayerDraw : MonoBehaviour
         finishButton.GetComponent<Animator>().SetBool("isShowing", false);
         curtain.SetBool("Raise", true);
 
-        // Export data
-        // imageCont.ImportImage(canvas);
-
-        // Compare drawings
-        StartCoroutine(scoreCont.displayScore(canvas.ToArray(), imageCont.selectedImage, playerTiles.tiles, imageCont.imageTiles.tiles));
+        // Export or score the drawing
+        if (imageEdit)
+        {
+            // Export data
+            imageCont.ImportImage(canvas);
+        } else {
+            // Compare drawings
+            StartCoroutine(scoreCont.displayScore(canvas.ToArray(), imageCont.selectedImage, playerTiles.tiles, imageCont.imageTiles.tiles));
+        }
     }
 
     // Coroutines
@@ -149,7 +156,7 @@ public class PlayerDraw : MonoBehaviour
         }
         
         // Generate new image
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(1f);
         if (!imageCont.generateImage()) // All images have been shown
         {
             // Show endScreen and final scores

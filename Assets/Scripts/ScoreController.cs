@@ -13,6 +13,8 @@ public class ScoreController : MonoBehaviour
     public TextMeshProUGUI currentScore;
     public TextMeshProUGUI addedScore;
     private PlayerDraw drawer;
+    [Space]
+    public float scoreSpeed=1f;
 
     void Start()
     {
@@ -58,6 +60,7 @@ public class ScoreController : MonoBehaviour
         {
             // Display a little square thingy moving across the board
             int darkenValue = 5;
+            print(i);
             SpriteRenderer playerTile = playerBoard[i].GetComponent<SpriteRenderer>();
             SpriteRenderer imageTile = gameBoard[i].GetComponent<SpriteRenderer>();
             
@@ -67,7 +70,7 @@ public class ScoreController : MonoBehaviour
             playerTile.color = new Color32(Convert.ToByte(playerTile.color.r+5), Convert.ToByte(playerTile.color.g+5), Convert.ToByte(playerTile.color.b+5), 255);
             imageTile.color = new Color32(Convert.ToByte(imageTile.color.r+5), Convert.ToByte(imageTile.color.g+5), Convert.ToByte(imageTile.color.b+5), 255);
 
-            yield return new WaitForSeconds(.025f);
+            yield return new WaitForSeconds(scoreSpeed*.025f);
 
             playerTile.color = ogPlayerColor;
             imageTile.color = ogImageColor;
@@ -75,7 +78,7 @@ public class ScoreController : MonoBehaviour
             if (player[i].Equals(image[i]))// /*skips white tiles ->*/ && (!player[i].Equals(Color.white) && !image[i].Equals(Color.white)))
             {
                 // Display points
-                yield return new WaitForSeconds(.075f);
+                yield return new WaitForSeconds(scoreSpeed*.075f);
                 points += 1;
                 pointsTemp += 1;
             }
@@ -87,7 +90,7 @@ public class ScoreController : MonoBehaviour
         while (score+1<=scoreTemp+pointsTemp)
         {
             // Display score
-            yield return new WaitForSeconds(.025f);
+            yield return new WaitForSeconds(scoreSpeed*.025f);
             score += 1;
             points -= 1;
             
