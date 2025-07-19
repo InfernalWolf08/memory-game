@@ -19,7 +19,6 @@ public class PlayerDraw : MonoBehaviour
     [Header("Curtain")]
     public Animator curtain;
     public float curtainWaitTime;
-    public float resetWait;
 
     [Header("Scene")]
     public TileGenerator playerTiles;
@@ -108,13 +107,10 @@ public class PlayerDraw : MonoBehaviour
         curtain.SetBool("Raise", true);
 
         // Export data
-        imageCont.ImportImage(canvas);
+        // imageCont.ImportImage(canvas);
 
         // Compare drawings
-        StartCoroutine(scoreCont.displayScore(canvas.ToArray(), imageCont.selectedImage));
-
-        // Reset
-        StartCoroutine(reset(resetWait));
+        StartCoroutine(scoreCont.displayScore(canvas.ToArray(), imageCont.selectedImage, playerTiles.tiles, imageCont.imageTiles.tiles));
     }
 
     // Coroutines
@@ -131,10 +127,26 @@ public class PlayerDraw : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator reset(float wait)
+    public IEnumerator reset()
     {
-        yield return new WaitForSeconds(wait);
-        canvas.Clear();
+        // Drop curtain
+        curtain.SetBool("Raise", false);
+        finishButton.GetComponent<Animator>().SetBool("isShowing", true);
+        canDraw = false;
+
+        // Clear player board
+        foreach (GameObject tile in playerTiles.tiles)
+        {
+            yield return new WaitForSeconds(0.025f);
+            tile.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        
+        // Generate new image
+        yield return new WaitForSeconds(1.25f);
+        imageCont.generateImage();
+
+        // Reset
+        StartCoroutine(curtainDrop(curtainWaitTime));
         yield return null;
     }
 }

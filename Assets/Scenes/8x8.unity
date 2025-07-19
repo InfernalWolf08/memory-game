@@ -2132,7 +2132,7 @@ MonoBehaviour:
   scoreCont: {fileID: 519420035}
   curtain: {fileID: 263620511}
   curtainWaitTime: 3
-  resetWait: 0
+  resetWait: 3
   playerTiles: {fileID: 8205135804833961321}
   finishButton: {fileID: 1511227305}
   imageCont: {fileID: 0}

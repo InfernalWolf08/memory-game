@@ -16,7 +16,7 @@ public class ImageController : MonoBehaviour
     }
 
     // Custom functions
-    void generateImage()
+    public void generateImage()
     {
         // Randomly pick an image
         selectedImage = images[UnityEngine.Random.Range(0, images.Count)].imageColors;
