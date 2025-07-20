@@ -60,7 +60,6 @@ public class ScoreController : MonoBehaviour
         {
             // Display a little square thingy moving across the board
             int darkenValue = 5;
-            print(i);
             SpriteRenderer playerTile = playerBoard[i].GetComponent<SpriteRenderer>();
             SpriteRenderer imageTile = gameBoard[i].GetComponent<SpriteRenderer>();
             

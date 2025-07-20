@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorTex: {fileID: 2800000, guid: c3049f81af9949946806a26866af0ae7, type: 3}
   defaultCursorTex: {fileID: 2800000, guid: 2480f5bb0e9ed2b4c93bf10b39a16e07, type: 3}
-  cursor: {fileID: 0}
+  cursor: {fileID: 8592362451311263890}
   drawer: {fileID: 1040912671407078683}
 --- !u!1 &839865524127009366
 GameObject:
@@ -725,15 +725,15 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   canvas: []
-  curtain: {fileID: 0}
+  curtain: {fileID: 4552005199888970923}
   curtainWaitTime: 3
   playerTiles: {fileID: 1943877730962707189}
-  finishButton: {fileID: 0}
+  finishButton: {fileID: 191298965253148888}
   imageCont: {fileID: 0}
-  endScreen: {fileID: 0}
+  endScreen: {fileID: 5885821986825992758}
   scoreCont: {fileID: 5905115004595310674}
-  score: {fileID: 0}
-  highScore: {fileID: 0}
+  score: {fileID: 6686210863870167000}
+  highScore: {fileID: 4452326089671867093}
 --- !u!224 &1049508037698259595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1185,10 +1185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a0a17c807a5f64797a2f8e6803fe54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: -9.225, y: -12.725}
+  startPoint: {x: -9.581, y: -13.1187}
   tile: {fileID: 4706229005718755633, guid: 968fce7e9fdbce449a9f63936fe4aad9, type: 3}
-  gridSize: {x: 8, y: 8}
-  offset: 1
+  gridSize: {x: 32, y: 32}
+  offset: 0.25
   tiles: []
 --- !u!222 &2037954505978407352
 CanvasRenderer:
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -2156,394 +2156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ce404645eaeef43b2c07b61d37aa31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  images:
-  - imageColors:
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4294902015
-    - serializedVersion: 2
-      rgba: 4294902015
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278190080
-    - serializedVersion: 2
-      rgba: 4278190080
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278190080
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278190080
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278190080
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278190080
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-    - serializedVersion: 2
-      rgba: 4278206592
-  - imageColors:
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4278190335
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278255360
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278255360
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278255360
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-  - imageColors:
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4278255360
-    - serializedVersion: 2
-      rgba: 4278223103
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278255360
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4278255360
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
-    - serializedVersion: 2
-      rgba: 4294967295
+  images: []
   imageTiles: {fileID: 8255281870275894490}
   selectedImage: []
 --- !u!1 &3445795073723565566
@@ -2727,7 +2340,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: getDrawing
         m_Mode: 1
@@ -3283,7 +2896,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -3358,7 +2971,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -4140,7 +3753,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -4290,7 +3903,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -4492,10 +4105,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   highScore: 0
-  difficulty: 
-  currentScore: {fileID: 0}
-  addedScore: {fileID: 0}
-  scoreSpeed: 1
+  difficulty: 32x32
+  currentScore: {fileID: 4641253665817665611}
+  addedScore: {fileID: 5004742742421619898}
+  scoreSpeed: 0.25
 --- !u!114 &5940591691144393466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4745,7 +4358,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -5130,7 +4743,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &6850576996174831174
@@ -5523,7 +5136,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -6207,10 +5820,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a0a17c807a5f64797a2f8e6803fe54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: -17.825, y: -12.725}
+  startPoint: {x: -18.181, y: -13.1187}
   tile: {fileID: 4706229005718755633, guid: db9020657245f314185798d7bd7c9f34, type: 3}
-  gridSize: {x: 8, y: 8}
-  offset: 1
+  gridSize: {x: 32, y: 32}
+  offset: 0.25
   tiles: []
 --- !u!224 &8262777817671010714
 RectTransform:
@@ -6285,6 +5898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3390566516616875899}
   - component: {fileID: 3426022136956733652}
+  - component: {fileID: 8361968940099589232}
   m_Layer: 0
   m_Name: Original Image
   m_TagString: Untagged
@@ -6292,6 +5906,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8361968940099589232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361968940099589231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b4c389f17c0114dbb3f50baa711d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2800000, guid: 6359003cf714d40468ed3d90bfab5b0b, type: 3}
+  imageCont: {fileID: 3426022136956733652}
 --- !u!212 &8422560468013442382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6665,7 +6294,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
@@ -6836,7 +6465,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040912671407078683}
         m_TargetAssemblyTypeName: PlayerDraw, Assembly-CSharp
         m_MethodName: changeColor
         m_Mode: 2
