@@ -27,7 +27,7 @@ public class ImageController : MonoBehaviour
         // Randomly pick an image
         int index = UnityEngine.Random.Range(0, images.Count);
         selectedImage = images[index].imageColors;
-        // images.Remove(images[index]);
+        images.Remove(images[index]);
 
         // Generate the image
         for (int i=0; i<imageTiles.tiles.Length; i++)

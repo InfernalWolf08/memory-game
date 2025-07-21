@@ -714,7 +714,7 @@ MonoBehaviour:
     rgba: 4294967295
   canvas: []
   curtain: {fileID: 4552005201363643710}
-  curtainWaitTime: 4
+  curtainWaitTime: 7
   playerTiles: {fileID: 1943877731018050633}
   finishButton: {fileID: 191298965924088141}
   imageCont: {fileID: 0}

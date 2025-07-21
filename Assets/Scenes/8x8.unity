@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6004256351947562358}
   - component: {fileID: 6040872894157920985}
+  - component: {fileID: 6040872894157920986}
   m_Layer: 0
   m_Name: Original Image
   m_TagString: Untagged
@@ -4633,6 +4634,21 @@ MonoBehaviour:
       rgba: 4294967295
   imageTiles: {fileID: 1066919904558157527}
   selectedImage: []
+--- !u!114 &6040872894157920986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600526235562640994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b4c389f17c0114dbb3f50baa711d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2800000, guid: ca3a2c086f81178459132c4cb4b24d85, type: 3}
+  imageCont: {fileID: 6040872894157920985}
 --- !u!114 &6046666792078186148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6297,7 +6313,7 @@ MonoBehaviour:
     rgba: 4294967295
   canvas: []
   curtain: {fileID: 4325875472942640197}
-  curtainWaitTime: 3
+  curtainWaitTime: 5
   playerTiles: {fileID: 7396277694296277240}
   finishButton: {fileID: 109424681754200118}
   imageCont: {fileID: 0}
