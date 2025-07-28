@@ -26,6 +26,8 @@ public class Menu : MonoBehaviour
         {
             descText.text = "";
         }
+
+        Cursor.visible = true;
     }
 
     // Change active menu

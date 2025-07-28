@@ -726,7 +726,7 @@ MonoBehaviour:
     rgba: 4294967295
   canvas: []
   curtain: {fileID: 4552005201270255322}
-  curtainWaitTime: 3
+  curtainWaitTime: 1
   playerTiles: {fileID: 1943877731098858159}
   finishButton: {fileID: 191298965486766761}
   imageCont: {fileID: 0}
@@ -4108,7 +4108,7 @@ MonoBehaviour:
   difficulty: 16x16 Random
   currentScore: {fileID: 4641253664917813818}
   addedScore: {fileID: 5004742744332836555}
-  scoreSpeed: 1
+  scoreSpeed: 0.5
 --- !u!114 &5940591691980417163
 MonoBehaviour:
   m_ObjectHideFlags: 0

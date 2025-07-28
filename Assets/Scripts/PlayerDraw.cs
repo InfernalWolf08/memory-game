@@ -156,7 +156,6 @@ public class PlayerDraw : MonoBehaviour
         }
         
         // Generate new image
-        yield return new WaitForSeconds(1f);
         if (!imageCont.generateImage()) // All images have been shown
         {
             // Show endScreen and final scores

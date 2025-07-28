@@ -34,9 +34,11 @@ public class ImageController : MonoBehaviour
         {
             GameObject tile = imageTiles.tiles[i];
 
-            if (tile.GetComponent<SpriteRenderer>()!=null)
+            try
             {
                 tile.GetComponent<SpriteRenderer>().color = selectedImage[i];
+            } catch (Exception e) {
+                print(e);
             }
         }
 
