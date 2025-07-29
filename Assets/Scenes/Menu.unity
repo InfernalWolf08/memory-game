@@ -830,6 +830,7 @@ MonoBehaviour:
   titleAddon: <size=30>Image Mode</size>
   descText: {fileID: 1294442130}
   desc: Attempt to copy down an image of something shown to you from memory.
+  timerDisplay: {fileID: 0}
 --- !u!114 &235865125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,6 +1353,7 @@ MonoBehaviour:
   titleAddon: <size=30>Random Mode</size>
   descText: {fileID: 1294442130}
   desc: Attempt to copy down a completely random jumble of colors from memory.
+  timerDisplay: {fileID: 0}
 --- !u!114 &464389503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,6 +1725,7 @@ MonoBehaviour:
   titleAddon: 
   descText: {fileID: 0}
   desc: 
+  timerDisplay: {fileID: 2011046043}
 --- !u!1 &657179993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,6 +2742,7 @@ MonoBehaviour:
   titleAddon: <color=black>PLACEHOLDER</color>
   descText: {fileID: 0}
   desc: 
+  timerDisplay: {fileID: 0}
 --- !u!1 &1394022920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,6 +2937,7 @@ MonoBehaviour:
   titleAddon: 
   descText: {fileID: 0}
   desc: 
+  timerDisplay: {fileID: 5061149}
 --- !u!114 &1467206382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3884,6 +3889,7 @@ MonoBehaviour:
   titleAddon: 
   descText: {fileID: 1294442130}
   desc: Please don't go :(
+  timerDisplay: {fileID: 0}
 --- !u!114 &1965514408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,6 +4131,7 @@ MonoBehaviour:
   titleAddon: <color=black>PLACEHOLDER</color>
   descText: {fileID: 0}
   desc: 
+  timerDisplay: {fileID: 0}
 --- !u!114 &2026057330
 MonoBehaviour:
   m_ObjectHideFlags: 0

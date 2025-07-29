@@ -33,12 +33,14 @@ public class PlayerDraw : MonoBehaviour
     public ScoreController scoreCont;
     public TextMeshProUGUI score;
     public TextMeshProUGUI highScore;
+    public TimerController timerCont;
 
     void Start()
     {
         // Initialize
         cam = GetComponent<Camera>();
         cursor = GetComponent<CursorController>();
+        timerCont = GetComponent<TimerController>();
         Cursor.visible = false;
         endScreen.SetActive(false);
         imageCont = UnityEngine.Object.FindFirstObjectByType<ImageController>();
@@ -86,6 +88,12 @@ public class PlayerDraw : MonoBehaviour
             } catch (Exception e) {
                 print("No tile was hit");
             }
+        }
+
+        // Display timer
+        if (timerCont.timerActive)
+        {
+            timerCont.showTimer = canDraw;
         }
     }
 
@@ -156,8 +164,21 @@ public class PlayerDraw : MonoBehaviour
         }
         
         // Generate new image
-        if (!imageCont.generateImage()) // All images have been shown
+        if (!imageCont.generateImage()) // All images have been shown, end game
         {
+            // Configure timer
+            timerCont.timerActive = false;
+            timerCont.showTimer = true;
+            timerCont.timerText.text = "<color=white>" + timerCont.timerText.text;
+            if (PlayerPrefs.GetFloat("bestTime") > timerCont.passedTime || PlayerPrefs.GetFloat("bestTime")==0)
+            {
+                int bestSeconds = Mathf.FloorToInt(timerCont.passedTime%60);
+                int bestMinutes = Mathf.FloorToInt(timerCont.passedTime/60);
+                timerCont.best = string.Format("Best: {0:00}:{1:00}", bestMinutes, bestSeconds);
+                timerCont.updateTimer();
+                PlayerPrefs.SetFloat("bestTime", timerCont.passedTime);
+            }
+
             // Show endScreen and final scores
             scoreCont.setHighscore();
             endScreen.SetActive(true);

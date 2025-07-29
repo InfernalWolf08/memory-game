@@ -14,6 +14,9 @@ public class Menu : MonoBehaviour
     public TextMeshProUGUI descText;
     public string desc;
 
+    [Header("Timer")]
+    public TextMeshProUGUI timerDisplay;
+
     void Start()
     {
         // Initialize
@@ -25,6 +28,11 @@ public class Menu : MonoBehaviour
         if (descText!=null)
         {
             descText.text = "";
+        }
+
+        if (timerDisplay!=null)
+        {
+            timerDisplay.text = ToBoolean(PlayerPrefs.GetInt("Timer")) ? "Timer Mode\n<color=green>Active</color>" : "Timer Mode\n<color=red>Inactive</color>";
         }
 
         Cursor.visible = true;
@@ -43,6 +51,7 @@ public class Menu : MonoBehaviour
     {
         bool timerActive = !ToBoolean(PlayerPrefs.GetInt("Timer"));
         PlayerPrefs.SetInt("Timer", ToInt16(timerActive));
+        print(timerActive);
         timer.text = timerActive ? "Timer Mode\n<color=green>Active</color>" : "Timer Mode\n<color=red>Inactive</color>";
     }
 

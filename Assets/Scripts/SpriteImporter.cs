@@ -8,7 +8,7 @@ public class SpriteImporter : MonoBehaviour
     public Texture2D[] sprites;
     public ImageController imageCont;
 
-    void Start()
+    void Awake()
     {
         // Iterate through the list of sprites
         foreach (Texture2D sprite in sprites)
@@ -22,6 +22,7 @@ public class SpriteImporter : MonoBehaviour
     List<Color32> convertToPixels(Texture2D sprite)
     {
         Color32[] colors = sprite.GetPixels32();
+        getColors(sprite.GetPixels32());
         
         for (int i=0; i<colors.Length; i++)
         {
@@ -29,8 +30,19 @@ public class SpriteImporter : MonoBehaviour
             {
                 colors[i] = Color.white;
             }
+
+            // print($"Color {i}: {colors[i]}");
         }
         
         return colors.ToList();
+    }
+
+    // Debug colors in sprite
+    void getColors(Color32[] sprite)
+    {
+        foreach (Color32 color in sprite)
+        {
+            print(color);
+        }
     }
 }
