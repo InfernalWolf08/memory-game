@@ -722,7 +722,7 @@ MonoBehaviour:
     rgba: 4294967295
   canvas: []
   curtain: {fileID: 4552005201363643710}
-  curtainWaitTime: 7
+  curtainWaitTime: 5
   playerTiles: {fileID: 1943877731018050633}
   finishButton: {fileID: 191298965924088141}
   imageCont: {fileID: 0}
@@ -8087,6 +8087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3390566516687950279}
   - component: {fileID: 3426022137010509416}
+  - component: {fileID: 8361968940170136276}
   m_Layer: 0
   m_Name: Original Image
   m_TagString: Untagged
@@ -8094,6 +8095,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8361968940170136276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361968940170136275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b4c389f17c0114dbb3f50baa711d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 2800000, guid: db6bda1ae676af340a97bcfc42c59542, type: 3}
+  - {fileID: 2800000, guid: be643b90457412949b4f3d50713d6a8f, type: 3}
+  - {fileID: 2800000, guid: bcadcf0671f839e41b061d4c40e17ae0, type: 3}
+  imageCont: {fileID: 3426022137010509416}
 --- !u!212 &8422560468093959154
 SpriteRenderer:
   m_ObjectHideFlags: 0

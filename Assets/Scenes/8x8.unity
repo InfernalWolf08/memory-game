@@ -4762,6 +4762,11 @@ MonoBehaviour:
   sprites:
   - {fileID: 2800000, guid: dc9274ea1f266df46afbf4d56b211ca4, type: 3}
   - {fileID: 2800000, guid: 95fade1015afb69498e1e2883d733298, type: 3}
+  - {fileID: 2800000, guid: 3ba8c5a6b077f9940ad1d25b21ad119c, type: 3}
+  - {fileID: 2800000, guid: 5f3f82d5774379443bec0ea5c791ccc9, type: 3}
+  - {fileID: 2800000, guid: 8c446a8b411cba24aa435c7a2ce6ac79, type: 3}
+  - {fileID: 2800000, guid: 3fb9c057fc1ea974f9fe110b7067913b, type: 3}
+  - {fileID: 2800000, guid: 37740a596044f6a4ca63726bc41a911d, type: 3}
   imageCont: {fileID: 6040872894157920985}
 --- !u!114 &6046666792078186148
 MonoBehaviour:
@@ -6428,7 +6433,7 @@ MonoBehaviour:
     rgba: 4294967295
   canvas: []
   curtain: {fileID: 4325875472942640197}
-  curtainWaitTime: 0
+  curtainWaitTime: 3
   playerTiles: {fileID: 7396277694296277240}
   finishButton: {fileID: 109424681754200118}
   imageCont: {fileID: 0}

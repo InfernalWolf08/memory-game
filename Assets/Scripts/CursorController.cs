@@ -9,7 +9,6 @@ public class CursorController : MonoBehaviour
 
     [Header("Image")]
     public Image cursor;
-    public PlayerDraw drawer;
 
     /*void Start()
     {
@@ -23,9 +22,6 @@ public class CursorController : MonoBehaviour
     {
         // Make a UI image the cusor
         cursor.transform.position = Input.mousePosition;
-
-        // Set cursor color
-        cursor.color = drawer.selectedColor;
     }
 
     // Actual unity cursor

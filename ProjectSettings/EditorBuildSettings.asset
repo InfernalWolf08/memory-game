@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/16x16 Random.unity
     guid: de1810c539654da428bf4f7a6860e9cf
+  - enabled: 1
+    path: Assets/Scenes/8x8 Practice.unity
+    guid: 5ea54f9c0d3b3e646a215233d6bb97c7
+  - enabled: 1
+    path: Assets/Scenes/16x16 Practice.unity
+    guid: 8b214f4bf26033a4aaa641cd58904124
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

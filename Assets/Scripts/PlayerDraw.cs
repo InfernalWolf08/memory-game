@@ -73,6 +73,9 @@ public class PlayerDraw : MonoBehaviour
             selectedColor = new Color32(255, 255, 255, 255); // White
         }
 
+        // Set cursor color
+        cursor.cursor.color = selectedColor;
+
         // Paint
         if (Input.GetMouseButton(0) && canDraw)
         {
