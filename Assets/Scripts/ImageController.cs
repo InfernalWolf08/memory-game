@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,6 +51,32 @@ public class ImageController : MonoBehaviour
         ImageArray image = new ImageArray();
         image.imageColors = colors.ToArray();
         images.Add(image);
+    }
+
+    // Coroutines
+    public IEnumerator generateDelayedImage(float delay)
+    {
+        // Randomly pick an image
+        int index = UnityEngine.Random.Range(0, images.Count);
+        selectedImage = images[index].imageColors;
+        images.Remove(images[index]);
+
+        // Generate the image
+        for (int i=0; i<imageTiles.tiles.Length; i++)
+        {
+            GameObject tile = imageTiles.tiles[i];
+
+            try
+            {
+                tile.GetComponent<SpriteRenderer>().color = selectedImage[i];
+            } catch (Exception e) {
+                print(e);
+            }
+
+            yield return new WaitForSeconds(delay);
+        }
+
+        yield return null;
     }
 }
 

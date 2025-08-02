@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -12,6 +13,7 @@ public class PracticeDraw : MonoBehaviour
     private CursorController cursor;
     public Color32 selectedColor = Color.white;
     public bool canDraw;
+    private bool canCheck;
     public List<Color32> canvas = new List<Color32>();
 
     [Header("Displays")]
@@ -27,7 +29,8 @@ public class PracticeDraw : MonoBehaviour
         cam = GetComponent<Camera>();
         cursor = GetComponent<CursorController>();
         Cursor.visible = false;
-        canDraw = true;
+        canDraw = false;
+        canCheck = true;
     }
 
     void Update()
@@ -85,8 +88,11 @@ public class PracticeDraw : MonoBehaviour
 
     public void toggleCover()
     {
-        curtain.SetActive(!curtain.activeSelf);
-        canDraw = !curtain.activeSelf;
+        if (canCheck)
+        {
+            curtain.SetActive(!curtain.activeSelf);
+            canDraw = curtain.activeSelf;
+        }
     }
 
     public void toggleReturn(GameObject returnScreen)
@@ -96,10 +102,12 @@ public class PracticeDraw : MonoBehaviour
 
     public void checkDrawing()
     {
-        if (canDraw)
+        if (canCheck)
         {
             // Initialize
+            canCheck = false;
             canDraw = false;
+            curtain.SetActive(false);
 
             // Get the player's drawing
             canvas.Clear();
@@ -154,8 +162,27 @@ public class PracticeDraw : MonoBehaviour
             }
         }
 
+        // Add image back to pool of their are any mistakes
+        if (score<canvas.Count)
+        {
+            imageTiles.ImportImage(imageTiles.selectedImage.ToList());
+            yield return new WaitForSeconds(3f);
+        }
+
+        // Clear the screens
+        for (int i=0; i<canvas.Count; i++)
+        {
+            yield return new WaitForSeconds(0.01f);
+            canvasTiles.tiles[i].GetComponent<SpriteRenderer>().color = Color.white;
+            imageTiles.imageTiles.tiles[i].GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        // Generate next image
+        StartCoroutine(imageTiles.generateDelayedImage(0.05f));
+
         // Finish
         canDraw = true;
+        canCheck = true;
         yield return null;
     }
 }
